@@ -9,3 +9,5 @@ node_modules
 .windsurf/* 
 
 .DS_Store
+
+*/.DS_Store
