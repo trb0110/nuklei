@@ -1,0 +1,26 @@
+sequenceDiagram
+    participant U as User
+    participant G as GUI
+    participant S as Simulation Engine
+    participant M as Models
+    participant D as Data Store
+    participant V as Visualization
+    
+    U->>G: Define Simulation Parameters
+    G->>S: Initialize Simulation
+    S->>M: Load Models
+    M-->>S: Models Loaded
+    S->>D: Retrieve Initial Data
+    D-->>S: Provide Data
+    
+    loop Time Steps
+        S->>M: Execute Time Step
+        M-->>S: Results
+        S->>D: Store Results
+    end
+    
+    S->>V: Generate Visualizations
+    V-->>U: Display Results
+    U->>G: Analyze & Refine
+    
+    Note over U,G: Iterative Process

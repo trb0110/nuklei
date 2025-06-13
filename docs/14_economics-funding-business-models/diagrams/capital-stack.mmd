@@ -1,0 +1,69 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#006100', 'tertiaryColor': '#000000'}}}%%
+pie showData
+    title Nuclear Project Capital Stack
+    "Senior Debt (38.5%)" : 38.5
+    "Sponsor Equity (20%)" : 20
+    "Mezzanine Debt (12.3%)" : 12.3
+    "Strategic Investors (10%)" : 10
+    "Infrastructure Funds (7%)" : 7
+    "Subordinated Debt (6.2%)" : 6.2
+    "Vendor Financing (3%)" : 3
+    "Government Equity (3%)" : 3
+    
+    %% Style the segments
+    classDef senior-debt fill:#4caf50,stroke:#000,stroke-width:2px,color:#fff
+    classDef sponsor-equity fill:#2196f3,stroke:#000,stroke-width:2px,color:#fff
+    classDef mezzanine fill:#ff9800,stroke:#000,stroke-width:2px,color:#000
+    classDef strategic-investors fill:#9c27b0,stroke:#000,stroke-width:2px,color:#fff
+    classDef infra-funds fill:#00bcd4,stroke:#000,stroke-width:2px,color:#000
+    classDef sub-debt fill:#ffc107,stroke:#000,stroke-width:2px,color:#000
+    classDef vendor-financing fill:#795548,stroke:#000,stroke-width:2px,color:#fff
+    classDef govt-equity fill:#f44336,stroke:#000,stroke-width:2px,color:#fff
+    
+    class "Senior Debt (38.5%)" senior-debt
+    class "Sponsor Equity (20%)" sponsor-equity
+    class "Mezzanine Debt (12.3%)" mezzanine
+    class "Strategic Investors (10%)" strategic-investors
+    class "Infrastructure Funds (7%)" infra-funds
+    class "Subordinated Debt (6.2%)" sub-debt
+    class "Vendor Financing (3%)" vendor-financing
+    class "Government Equity (3%)" govt-equity
+    
+    %% Add legend
+    legend
+        Legend
+        <div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;'>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #4caf50; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Senior Debt</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #2196f3; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Sponsor Equity</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #ff9800; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Mezzanine Debt</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #9c27b0; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Strategic Investors</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #00bcd4; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Infrastructure Funds</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #ffc107; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Subordinated Debt</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #795548; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Vendor Financing</span>
+            </div>
+            <div style='display: flex; align-items: center;'>
+                <div style='width: 15px; height: 15px; background-color: #f44336; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Government Equity</span>
+            </div>
+        </div>
+    endlegend

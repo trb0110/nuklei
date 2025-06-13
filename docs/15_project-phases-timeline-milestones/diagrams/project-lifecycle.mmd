@@ -1,0 +1,127 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#006100', 'tertiaryColor': '#000000'}}}%%
+flowchart TD
+    classDef preProject fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000000
+    classDef development fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000000
+    classDef construction fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000000
+    classDef commissioning fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000000
+    classDef operations fill:#e8eaf6,stroke:#3949ab,stroke-width:2px,color:#000000
+    classDef decommissioning fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000000
+    classDef decision fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000,stroke-dasharray: 5 5
+    
+    %% Main Phases
+    A[Pre-Project<br>Months 1-12]:::preProject --> B[Development<br>Months 13-36]:::development
+    B --> C[Construction<br>Months 37-96]:::construction
+    C --> D[Commissioning<br>Months 97-108]:::commissioning
+    D --> E[Operations<br>Years 10-60]:::operations
+    E --> F[Decommissioning<br>Years 61-80]:::decommissioning
+    
+    %% Pre-Project Sub-Phases
+    subgraph Pre-Project
+        A1[Project Initiation<br>M1-M3]:::preProject
+        A2[Feasibility Study<br>M4-M8]:::preProject
+        A3[Regulatory Roadmap<br>M9-M12]:::preProject
+        
+        A1 --> A2 --> A3
+    end
+    
+    %% Development Sub-Phases
+    subgraph Development
+        B1[Site Acquisition<br>M13-M18]:::development
+        B2[Preliminary Design<br>M19-M24]:::development
+        B3[Licensing Application<br>M25-M30]:::development
+        B4[Final Design<br>M31-M36]:::development
+        
+        B1 --> B2 --> B3 --> B4
+    end
+    
+    %% Construction Sub-Phases
+    subgraph Construction
+        C1[Site Preparation<br>M37-M42]:::construction
+        C2[Major Construction<br>M43-M84]:::construction
+        C3[Systems Installation<br>M85-M90]:::construction
+        C4[Pre-Operational Testing<br>M91-M96]:::construction
+        
+        C1 --> C2 --> C3 --> C4
+    end
+    
+    %% Commissioning Sub-Phases
+    subgraph Commissioning
+        D1[Fuel Loading<br>M97]:::commissioning
+        D2[Initial Criticality<br>M98]:::commissioning
+        D3[Power Ascension<br>M99-M105]:::commissioning
+        D4[Commercial Operation<br>M106-M108]:::commissioning
+        
+        D1 --> D2 --> D3 --> D4
+    end
+    
+    %% Operations Sub-Phases
+    subgraph Operations
+        E1[First Fuel Cycle<br>Y1-Y2]:::operations
+        E2[First Refueling Outage<br>Y2]:::operations
+        E3[Major Component Replacement<br>Y15, Y30]:::operations
+        
+        E1 --> E2 --> E3
+    end
+    
+    %% Decommissioning Sub-Phases
+    subgraph Decommissioning
+        F1[Defueling<br>Y61-Y63]:::decommissioning
+        F2[Decontamination<br>Y64-Y70]:::decommissioning
+        F3[Dismantling<br>Y71-Y75]:::decommissioning
+        F4[Site Restoration<br>Y76-Y80]:::decommissioning
+        
+        F1 --> F2 --> F3 --> F4
+    end
+    
+    %% Decision Points
+    G{Feasibility<br>Decision}:::decision
+    H{Construction<br>Permit}:::decision
+    I{Operating<br>License}:::decision
+    J{License<br>Renewal}:::decision
+    
+    %% Connect Decision Points
+    A2 -->|Feasibility<br>Report| G
+    G -->|Proceed| B
+    B3 -->|Application| H
+    H -->|Approval| C
+    C4 -->|Ready for<br>Fuel Load| I
+    I -->|License<br>Granted| D
+    E3 -->|Life<br>Extension| J
+    J -->|Extended| E
+    J -->|Decommission| F
+    
+    %% Legend
+    legend
+        Project Lifecycle Phases
+        <div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;'>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #e3f2fd; border: 2px solid #1565c0; margin-right: 5px;'></div>
+                <span>Pre-Project</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #e8f5e9; border: 2px solid #2e7d32; margin-right: 5px;'></div>
+                <span>Development</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #fff3e0; border: 2px solid #e65100; margin-right: 5px;'></div>
+                <span>Construction</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #f3e5f5; border: 2px solid #7b1fa2; margin-right: 5px;'></div>
+                <span>Commissioning</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #e8eaf6; border: 2px solid #3949ab; margin-right: 5px;'></div>
+                <span>Operations</span>
+            </div>
+            <div style='display: flex; align-items: center;'>
+                <div style='width: 15px; height: 15px; background-color: #fce4ec; border: 2px solid #c2185b; margin-right: 5px;'></div>
+                <span>Decommissioning</span>
+            </div>
+        </div>
+    endlegend
+    
+    %% Notes
+    note1[Project Duration: 80 years]:::note
+    note2[Critical Path Shown in Bold]:::note
+    note3[Decision Points Mark Key Milestones]:::note

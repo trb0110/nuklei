@@ -1,0 +1,57 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#006100', 'tertiaryColor': '#000000'}}}%%
+pie showData
+    title "Project Budget Allocation by Phase ($10B Total)"
+    "Construction (75.0%)" : 7500
+    "Operations (15.0%)" : 1500
+    "Development (2.0%)" : 200
+    "Commissioning (5.0%)" : 500
+    "Decommissioning (2.5%)" : 250
+    "Pre-Project (0.5%)" : 50
+    
+    classDef construction fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    classDef operations fill:#2196f3,stroke:#0d47a1,stroke-width:2px,color:#ffffff
+    classDef development fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    classDef commissioning fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#ffffff
+    classDef decommissioning fill:#f44336,stroke:#b71c1c,stroke-width:2px,color:#ffffff
+    classDef preProject fill:#00bcd4,stroke:#006064,stroke-width:2px,color:#000000
+    
+    class "Construction (75.0%)" construction
+    class "Operations (15.0%)" operations
+    class "Development (2.0%)" development
+    class "Commissioning (5.0%)" commissioning
+    class "Decommissioning (2.5%)" decommissioning
+    class "Pre-Project (0.5%)" preProject
+    
+    legend
+        Budget Categories
+        <div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;'>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #4caf50; margin-right: 5px; border: 1px solid #2e7d32;'></div>
+                <span>Construction ($7.5B)</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #2196f3; margin-right: 5px; border: 1px solid #0d47a1;'></div>
+                <span>Operations ($1.5B)</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #ff9800; margin-right: 5px; border: 1px solid #e65100;'></div>
+                <span>Development ($200M)</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #9c27b0; margin-right: 5px; border: 1px solid #4a148c;'></div>
+                <span>Commissioning ($500M)</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #f44336; margin-right: 5px; border: 1px solid #b71c1c;'></div>
+                <span>Decommissioning ($250M)</span>
+            </div>
+            <div style='display: flex; align-items: center;'>
+                <div style='width: 15px; height: 15px; background-color: #00bcd4; margin-right: 5px; border: 1px solid #006064;'></div>
+                <span>Pre-Project ($50M)</span>
+            </div>
+        </div>
+    endlegend
+    
+    note1[Total Project Budget: $10,000M]:::note
+    note2[Construction includes: Civil Works, Equipment, Materials]:::note
+    note3[Operations covers 50 years of plant operation]:::note

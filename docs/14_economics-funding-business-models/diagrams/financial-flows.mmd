@@ -1,0 +1,52 @@
+flowchart TD
+    subgraph "Project Company"
+        A[Equity Investors] -->|Capital| B[Project Co]
+        B -->|Dividends| A
+        
+        C[Debt Providers] -->|Loans| B
+        B -->|Debt Service| C
+        
+        D[EPC Contractor] -->|Construction| B
+        B -->|Payment| D
+        
+        E[Operator] -->|O&M Services| B
+        B -->|O&M Fees| E
+        
+        F[Fuel Supplier] -->|Fuel| B
+        B -->|Fuel Payments| F
+    end
+    
+    subgraph "Offtaker/Grid"
+        B -->|Electricity| G[Grid/PPA Counterparty]
+        G -->|Revenue| B
+    end
+    
+    subgraph "Government/Regulators"
+        H[Regulator] -->|Licenses| B
+        I[Tax Authority] <-->|Taxes/Incentives| B
+        J[Export Credit Agencies] -->|Guarantees| C
+    end
+    
+    subgraph "Risk Mitigation"
+        K[Insurance Companies] -->|Coverage| B
+        L[Hedging Counterparties] <-->|Hedges| B
+        M[Equity Guarantors] -->|Guarantees| A
+    end
+    
+    %% Styling
+    classDef project fill:#e1f5fe,stroke:#01579b
+    classDef external fill:#e8f5e9,stroke:#2e7d32
+    classDef risk fill:#fff3e0,stroke:#e65100
+    
+    class A,B,C,D,E,F project
+    class G,H,I,J external
+    class K,L,M risk
+    
+    %% Annotations
+    note1[Project Cash Flows]:::note
+    note2[Risk Allocation]:::note
+    note3[Regulatory Framework]:::note
+    
+    note1 -.- B
+    note2 -.- K & L & M
+    note3 -.- H & I

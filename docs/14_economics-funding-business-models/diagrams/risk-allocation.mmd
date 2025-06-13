@@ -1,0 +1,100 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#006100', 'tertiaryColor': '#000000'}}}%%
+flowchart TD
+    classDef govt fill:#4caf50,stroke:#000,stroke-width:2px,color:#fff
+    classDef sponsor fill:#2196f3,stroke:#000,stroke-width:2px,color:#fff
+    classDef contractor fill:#ff9800,stroke:#000,stroke-width:2px,color:#000
+    classDef operator fill:#9c27b0,stroke:#000,stroke-width:2px,color:#fff
+    classDef offtaker fill:#00bcd4,stroke:#000,stroke-width:2px,color:#000
+    classDef supplier fill:#ffc107,stroke:#000,stroke-width:2px,color:#000
+    classDef insurer fill:#795548,stroke:#000,stroke-width:2px,color:#fff
+    classDef lender fill:#f44336,stroke:#000,stroke-width:2px,color:#fff
+    
+    subgraph "Risk Allocation Framework"
+        direction TB
+        
+        %% Risk Categories
+        subgraph "Construction Phase"
+            A1[Cost Overruns]:::contractor
+            A2[Delays]:::contractor
+            A3[Design Errors]:::contractor
+            A4[Force Majeure]:::insurer
+        end
+        
+        subgraph "Operation Phase"
+            B1[Performance]:::operator
+            B2[Fuel Supply]:::supplier
+            B3[Market Risk]:::offtaker
+            B4[Regulatory Changes]:::govt
+        end
+        
+        subgraph "Financial Risks"
+            C1[Interest Rates]:::lender
+            C2[Currency]:::lender
+            C3[Inflation]:::sponsor
+            C4[Refinancing]:::lender
+        end
+        
+        %% Risk Takers
+        G[Government]:::govt
+        S[Sponsor]:::sponsor
+        C[EPC Contractor]:::contractor
+        O[Operator]:::operator
+        OT[Offtaker]:::offtaker
+        F[Fuel Supplier]:::supplier
+        I[Insurers]:::insurer
+        L[Lenders]:::lender
+        
+        %% Risk Flows
+        A1 & A2 & A3 --> C
+        A4 --> I
+        B1 --> O
+        B2 --> F
+        B3 --> OT
+        B4 --> G
+        C1 & C2 & C4 --> L
+        C3 --> S
+    end
+    
+    %% Legend
+    legend
+        Risk Allocation by Party
+        <div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;'>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #4caf50; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Government</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #2196f3; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Sponsor</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #ff9800; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>EPC Contractor</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #9c27b0; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Operator</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #00bcd4; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Offtaker</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #ffc107; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Fuel Supplier</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #795548; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Insurers</span>
+            </div>
+            <div style='display: flex; align-items: center;'>
+                <div style='width: 15px; height: 15px; background-color: #f44336; margin-right: 5px; border: 1px solid #000;'></div>
+                <span>Lenders</span>
+            </div>
+        </div>
+    endlegend
+    
+    %% Notes
+    note1[Allocation based on ability to control and mitigate risks]:::note
+    note2[Risk transfer through contracts and insurance]:::note
+    note3[Balanced risk-sharing improves bankability]:::note

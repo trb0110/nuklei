@@ -1,0 +1,22 @@
+flowchart TD
+    A[Requirements Analysis] --> B[Test Planning]
+    B --> C[Test Case Design]
+    C --> D[Test Environment Setup]
+    D --> E[Test Execution]
+    E --> F{Pass?}
+    F -->|Yes| G[Test Reporting]
+    F -->|No| H[Defect Logging]
+    H --> I[Defect Fixing]
+    I --> E
+    G --> J[Test Completion]
+    
+    subgraph "Continuous Testing"
+    K[Code Commit] --> L[Automated Build]
+    L --> M[Unit Tests]
+    M --> N[Integration Tests]
+    N --> O[System Tests]
+    O --> P[Deployment]
+    end
+    
+    style A fill:#f9f,stroke:#333
+    style J fill:#bbf,stroke:#333

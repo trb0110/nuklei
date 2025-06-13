@@ -1,0 +1,59 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#006100', 'tertiaryColor': '#000000'}}}%%
+xychart-beta
+    title "Project Resource Loading Profile (FTE)"
+    x-axis ["Pre-Project", "Development", "Construction", "Commissioning", "Operations", "Decommissioning"]
+    y-axis "Full-Time Equivalents (FTE)" 0 --> 2000
+    bar ["Engineering"]
+    bar ["Construction"]
+    bar ["Operations"]
+    bar ["Support"]
+    bar ["Total"]
+    
+    "Pre-Project" : [25, 5, 5, 15, 50]
+    "Development" : [50, 10, 10, 30, 100]
+    "Construction" : [100, 1500, 50, 100, 1750]
+    "Commissioning" : [75, 250, 150, 75, 550]
+    "Operations" : [50, 25, 300, 125, 500]
+    "Decommissioning" : [30, 200, 50, 70, 350]
+    
+    classDef engineering fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    classDef construction fill:#2196f3,stroke:#0d47a1,stroke-width:2px,color:#ffffff
+    classDef operations fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    classDef support fill:#9c27b0,stroke:#4a148c,stroke-width:2px,color:#ffffff
+    classDef total fill:#f44336,stroke:#b71c1c,stroke-width:2px,color:#ffffff
+    
+    class "Engineering" engineering
+    class "Construction" construction
+    class "Operations" operations
+    class "Support" support
+    class "Total" total
+    
+    legend
+        Resource Categories
+        <div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;'>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #4caf50; margin-right: 5px; border: 1px solid #2e7d32;'></div>
+                <span>Engineering</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #2196f3; margin-right: 5px; border: 1px solid #0d47a1;'></div>
+                <span>Construction</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #ff9800; margin-right: 5px; border: 1px solid #e65100;'></div>
+                <span>Operations</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #9c27b0; margin-right: 5px; border: 1px solid #4a148c;'></div>
+                <span>Support</span>
+            </div>
+            <div style='display: flex; align-items: center;'>
+                <div style='width: 15px; height: 15px; background-color: #f44336; margin-right: 5px; border: 1px solid #b71c1c;'></div>
+                <span>Total</span>
+            </div>
+        </div>
+    endlegend
+    
+    note1[Peak Resource Demand: 1,750 FTE during Construction]:::note
+    note2[Operations Phase: 300 FTEs in Operations, 50 in Engineering]:::note
+    note3[Decommissioning: 200 FTEs in Construction, 50 in Operations]:::note

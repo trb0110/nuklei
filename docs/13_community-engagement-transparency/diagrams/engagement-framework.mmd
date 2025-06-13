@@ -1,0 +1,48 @@
+flowchart TD
+    subgraph "Community Engagement Framework"
+        A[Stakeholders] <--> B[Engagement Activities]
+        B <--> C[Communication Channels]
+        C <--> D[Feedback Mechanisms]
+        D <--> A
+        
+        subgraph "Core Principles"
+            CP1[Inclusivity]
+            CP2[Transparency]
+            CP3[Accountability]
+            CP4[Responsiveness]
+        end
+        
+        subgraph "Implementation"
+            I1[Planning]
+            I2[Execution]
+            I3[Monitoring]
+            I4[Evaluation]
+        end
+        
+        CP1 & CP2 & CP3 & CP4 <--> I1
+        I1 --> I2 --> I3 --> I4 --> I1
+    end
+    
+    subgraph "Inputs"
+        IN1[Community Needs]
+        IN2[Regulatory Requirements]
+        IN3[Project Objectives]
+    end
+    
+    subgraph "Outputs"
+        OUT1[Trust & Social License]
+        OUT2[Informed Decisions]
+        OUT3[Shared Value]
+    end
+    
+    IN1 & IN2 & IN3 --> A
+    D --> OUT1 & OUT2 & OUT3
+    
+    style A fill:#f9f,stroke:#333
+    style B fill:#9f9,stroke:#333
+    style C fill:#99f,stroke:#333
+    style D fill:#ff9,stroke:#333
+    style CP1,CP2,CP3,CP4 fill:#f96,stroke:#333
+    style I1,I2,I3,I4 fill:#9cf,stroke:#333
+    style IN1,IN2,IN3 fill:#9f9,stroke:#333
+    style OUT1,OUT2,OUT3 fill:#f9f,stroke:#333

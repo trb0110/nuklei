@@ -1,0 +1,50 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#006100', 'tertiaryColor': '#000000'}}}%%
+quadrantChart
+    title Risk Assessment Matrix
+    x-axis Low Impact --> High Impact
+    y-axis Low Probability --> High Probability
+    quadrant-1 Low Priority
+    quadrant-2 Monitor
+    quadrant-3 Mitigate
+    quadrant-4 High Priority
+    
+    "Regulatory Delays": [0.7, 0.8]
+    "Cost Overruns": [0.6, 0.7]
+    "Supply Chain Disruptions": [0.5, 0.6]
+    "Skilled Labor Shortage": [0.7, 0.4]
+    "Technology Readiness": [0.3, 0.8]
+    "Design Changes": [0.4, 0.5]
+    "Safety Incidents": [0.2, 0.9]
+    "Environmental Issues": [0.3, 0.6]
+    "Market Conditions": [0.5, 0.4]
+    "Geopolitical Factors": [0.3, 0.5]
+    
+    classDef high fill:#f44336,stroke:#b71c1c,stroke-width:2px,color:#ffffff
+    classDef medium fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    classDef low fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#ffffff
+    
+    class "Regulatory Delays","Cost Overruns","Supply Chain Disruptions","Skilled Labor Shortage" high
+    class "Technology Readiness","Design Changes","Safety Incidents","Environmental Issues" medium
+    class "Market Conditions","Geopolitical Factors" low
+    
+    legend
+        Risk Categories
+        <div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;'>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #f44336; margin-right: 5px; border: 1px solid #b71c1c;'></div>
+                <span>High Priority</span>
+            </div>
+            <div style='display: flex; align-items: center; margin-right: 15px;'>
+                <div style='width: 15px; height: 15px; background-color: #ff9800; margin-right: 5px; border: 1px solid #e65100;'></div>
+                <span>Monitor</span>
+            </div>
+            <div style='display: flex; align-items: center;'>
+                <div style='width: 15px; height: 15px; background-color: #4caf50; margin-right: 5px; border: 1px solid #2e7d32;'></div>
+                <span>Low Priority</span>
+            </div>
+        </div>
+    endlegend
+    
+    note1[Impact: Left (Low) to Right (High)]:::note
+    note2[Probability: Bottom (Low) to Top (High)]:::note
+    note3[Quadrant 4 (Top Right): Highest Priority Risks]:::note

@@ -1,0 +1,28 @@
+graph TD
+    subgraph "Nuklei System Architecture"
+        A[Reactor Core] -->|Heat| B[Primary Heat Exchanger]
+        B -->|Heat| C[sCO₂ Power Cycle]
+        C -->|Electricity| D[Grid]
+        
+        A -->|Decay Heat| E[Passive Cooling System]
+        E -->|Natural Circulation| F[Heat Sink]
+        
+        G[Digital Twin] <-->|Real-time Data| H[I&C Systems]
+        H <-->|Control Signals| A
+        
+        I[Cybersecurity] --- H
+        I --- G
+        I --- J[Network Architecture]
+        
+        K[Operator] <-->|HMI| H
+        K <-->|Training| L[Simulation Environment]
+    end
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#f96,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#f9f,stroke:#f33,stroke-width:2px
+    style G fill:#6cf,stroke:#333,stroke-width:2px
+    style H fill:#9cf,stroke:#333,stroke-width:2px
+    style I fill:#f99,stroke:#333,stroke-width:2px

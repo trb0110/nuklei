@@ -1,0 +1,22 @@
+graph TD
+    A[Knowledge Sources] -->|Capture| B(Knowledge Base)
+    B -->|Access| C[End Users]
+    C -->|Contribute| B
+    
+    subgraph "Knowledge Management System"
+    B --> D[Search Engine]
+    B --> E[Taxonomy Manager]
+    B --> F[Access Control]
+    B --> G[Version Control]
+    end
+    
+    subgraph "Integration Layer"
+    H[LMS] <--> B
+    I[Document Management] <--> B
+    J[HR Systems] <--> B
+    K[Training Systems] <--> B
+    end
+    
+    style A fill:#f9f,stroke:#333
+    style C fill:#bbf,stroke:#333
+    style B fill:#9f9,stroke:#333
